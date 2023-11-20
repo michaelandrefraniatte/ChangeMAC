@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAPICodePack.Net;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -17,7 +18,7 @@ namespace ChangeMAC
             .Where(nic => nic.OperationalStatus == System.Net.NetworkInformation.OperationalStatus.Up && nic.NetworkInterfaceType != System.Net.NetworkInformation.NetworkInterfaceType.Loopback)
             .Select(nic => nic.GetPhysicalAddress().ToString())
             .FirstOrDefault();
-            Console.WriteLine("Network MAC Address :");
+            Console.WriteLine("Network MAC Address:");
             Console.WriteLine(firstMacAddress);
             string str = firstMacAddress.Substring(0, 2);
             string[] stritems = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" };
@@ -43,18 +44,23 @@ namespace ChangeMAC
             index = rand.Next(stritems.Length);
             str = str + stritems[index];
             index = rand.Next(stritems.Length);
-            Console.WriteLine("Network New MAC Address :");
-            Console.WriteLine(str);
-            ChangeMacAddress(str);
+            Console.WriteLine("Network New MAC Address:");
+            Console.WriteLine(str.Replace("-", ""));
+            var networks = NetworkListManager.GetNetworks(NetworkConnectivityLevels.Connected); foreach (Network network in networks)
+            {
+                ChangeMacAddress(network.Name, str);
+                break;
+            }
             Console.WriteLine("done");
+            Console.ReadLine();
         }
-        public static void ChangeMacAddress(string macadress)
+        public static void ChangeMacAddress(string networkname, string macadress)
         {
             var start = new ProcessStartInfo
             {
                 FileName = "powershell.exe",
                 RedirectStandardOutput = true,
-                Arguments = $"Set-NetAdapter -InterfaceDescription 'Realtek*' -MacAddress '{macadress}'",
+                Arguments = $"Set-NetAdapter -Name '{networkname}' -MacAddress '{macadress}'",
                 CreateNoWindow = true,
                 UseShellExecute = false
             };
