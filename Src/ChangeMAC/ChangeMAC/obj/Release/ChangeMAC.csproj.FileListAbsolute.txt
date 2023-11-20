@@ -1,0 +1,8 @@
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\ChangeMAC.exe.config
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\ChangeMAC.exe
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\ChangeMAC.pdb
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.AssemblyReference.cache
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.SuggestedBindingRedirects.cache
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.exe
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.pdb
