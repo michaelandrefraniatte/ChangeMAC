@@ -1,11 +1,8 @@
 ﻿using Microsoft.WindowsAPICodePack.Net;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChangeMAC
 {
@@ -54,18 +51,17 @@ namespace ChangeMAC
             Console.WriteLine("done");
             Console.ReadLine();
         }
-        public static void ChangeMacAddress(string networkname, string macadress)
+        public static void ChangeMacAddress(string networkname, string macaddress)
         {
-            var start = new ProcessStartInfo
-            {
-                FileName = "powershell.exe",
-                RedirectStandardOutput = true,
-                Arguments = $"Set-NetAdapter -Name '{networkname}' -MacAddress '{macadress}'",
-                CreateNoWindow = true,
-                UseShellExecute = false
-            };
-            var process = Process.Start(start);
-            process.WaitForExit();
+            string readtext = File.ReadAllText("setup.ps1");
+            string readtextreplaced = readtext.Replace("networkname", networkname).Replace("macaddress", macaddress);
+            File.WriteAllText("powershell.exe", readtextreplaced);
+            ProcessStartInfo startInfo = new ProcessStartInfo("setup.ps1");
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.Verb = "runas";
+            startInfo.UseShellExecute = true;
+            Process.Start(startInfo);
+            File.WriteAllText("setup.ps1", readtext);
         }
     }
 }
