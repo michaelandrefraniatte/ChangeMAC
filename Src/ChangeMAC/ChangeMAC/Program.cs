@@ -10,11 +10,7 @@ namespace ChangeMAC
     {
         static void Main(string[] args)
         {
-            String firstMacAddress = System.Net.NetworkInformation.NetworkInterface
-            .GetAllNetworkInterfaces()
-            .Where(nic => nic.OperationalStatus == System.Net.NetworkInformation.OperationalStatus.Up && nic.NetworkInterfaceType != System.Net.NetworkInformation.NetworkInterfaceType.Loopback)
-            .Select(nic => nic.GetPhysicalAddress().ToString())
-            .FirstOrDefault();
+            string firstMacAddress = GetMAC();
             Console.WriteLine("Network MAC Address:");
             Console.WriteLine(firstMacAddress);
             string str = firstMacAddress.Substring(0, 2);
@@ -51,17 +47,26 @@ namespace ChangeMAC
             Console.WriteLine("done");
             Console.ReadLine();
         }
+        static string GetMAC()
+        {
+            String firstMacAddress = System.Net.NetworkInformation.NetworkInterface
+            .GetAllNetworkInterfaces()
+            .Where(nic => nic.OperationalStatus == System.Net.NetworkInformation.OperationalStatus.Up && nic.NetworkInterfaceType != System.Net.NetworkInformation.NetworkInterfaceType.Loopback)
+            .Select(nic => nic.GetPhysicalAddress().ToString())
+            .FirstOrDefault();
+            return firstMacAddress;
+        }
         public static void ChangeMacAddress(string networkname, string macaddress)
         {
-            string readtext = File.ReadAllText("setup.ps1");
+            string readtext = File.ReadAllText("setup.cmd");
             string readtextreplaced = readtext.Replace("networkname", networkname).Replace("macaddress", macaddress);
-            File.WriteAllText("powershell.exe", readtextreplaced);
-            ProcessStartInfo startInfo = new ProcessStartInfo("setup.ps1");
+            File.WriteAllText("setup.cmd", readtextreplaced);
+            ProcessStartInfo startInfo = new ProcessStartInfo("setup.cmd");
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.Verb = "runas";
             startInfo.UseShellExecute = true;
             Process.Start(startInfo);
-            File.WriteAllText("setup.ps1", readtext);
+            File.WriteAllText("setup.cmd", readtext);
         }
     }
 }

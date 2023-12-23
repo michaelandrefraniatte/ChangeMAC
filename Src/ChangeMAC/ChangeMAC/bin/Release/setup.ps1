@@ -1,1 +1,0 @@
-Set-NetAdapter -Name "networkname" -MacAddress "macaddress"

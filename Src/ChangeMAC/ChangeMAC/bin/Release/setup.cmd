@@ -1,0 +1,1 @@
+netsh interface set interface "networkname" newname="macaddress"
