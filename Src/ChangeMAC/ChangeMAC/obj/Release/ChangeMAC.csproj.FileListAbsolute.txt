@@ -2,10 +2,13 @@ C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\Ch
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\ChangeMAC.exe
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\ChangeMAC.pdb
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.AssemblyReference.cache
-C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.SuggestedBindingRedirects.cache
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.CoreCompileInputs.cache
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.exe
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.pdb
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\Microsoft.WindowsAPICodePack.dll
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\Microsoft.WindowsAPICodePack.xml
 C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\obj\Release\ChangeMAC.csproj.CopyComplete
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\Keyboardinputs.dll
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\SharpDX.DirectInput.dll
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\SharpDX.dll
+C:\Users\micha\Documents\github\ChangeMAC\Src\ChangeMAC\ChangeMAC\bin\Release\Keyboardinputs.pdb
